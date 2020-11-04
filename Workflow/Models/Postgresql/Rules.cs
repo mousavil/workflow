@@ -13,6 +13,7 @@ namespace Workflow.Models.Postgresql
         public string Description { get; set; }
         public int WorkflowId { get; set; }
         
+        
         [ForeignKey("WorkflowId")]
         public Workflows Workflows { get; set; }
     }
