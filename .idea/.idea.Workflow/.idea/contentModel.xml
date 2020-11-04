@@ -11,6 +11,9 @@
         <e p="Context" t="Include">
           <e p="WorkflowDbContext.cs" t="Include" />
         </e>
+        <e p="Controller" t="Include">
+          <e p="WorkflowController.cs" t="Include" />
+        </e>
         <e p="Interfaces" t="Include">
           <e p="IBaseRepository.cs" t="Include" />
         </e>
@@ -37,7 +40,10 @@
         <e p="Utilities" t="Include">
           <e p="Assert.cs" t="Include" />
         </e>
-        <e p="ViewModels" t="Include" />
+        <e p="ViewModels" t="Include">
+          <e p="WorkflowAddViewModel.cs" t="Include" />
+          <e p="WorkflowUpdateViewModel.cs" t="Include" />
+        </e>
         <e p="Workflow.csproj" t="IncludeRecursive" />
         <e p="appsettings.Development.json" t="Include" />
         <e p="appsettings.json" t="Include" />
