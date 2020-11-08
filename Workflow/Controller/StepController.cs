@@ -55,15 +55,15 @@ namespace Workflow.Controller
             
             
             
-            await _stepRepo.AddRangeAsync(new List<Steps>()
-            {
-                Name = input.Name,
-                Status = 0,
-                WorkflowId = input.WorkflowId,
-                
-            });
-            var id = (await _workflowRepo.GetByConditionAsync(x => x.Name == input.Name)).First().Id;
-            return Ok(new {WorkflowId = id});
+            // await _stepRepo.AddRangeAsync(new List<Steps>()
+            // {
+            //     Name = input.Name,
+            //     Status = 0,
+            //     WorkflowId = input.WorkflowId,
+            //     
+            // });
+            // var id = (await _workflowRepo.GetByConditionAsync(x => x.Name == input.Name)).First().Id;
+            return Ok(/*new {WorkflowId = id}*/);
         }
         
            [HttpPut("[action]/{id}")]
