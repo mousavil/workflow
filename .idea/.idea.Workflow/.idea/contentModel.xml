@@ -45,6 +45,7 @@
           <e p="StepAddViewModel.cs" t="Include" />
           <e p="StepUpdateViewModel.cs" t="Include" />
           <e p="WorkflowAddViewModel.cs" t="Include" />
+          <e p="WorkflowGet.cs" t="Include" />
           <e p="WorkflowUpdateViewModel.cs" t="Include" />
         </e>
         <e p="Workflow.csproj" t="IncludeRecursive" />

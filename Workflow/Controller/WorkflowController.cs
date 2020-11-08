@@ -81,7 +81,7 @@ namespace Workflow.Controller
         }
         
            [HttpPut("[action]/{id}")]
-        public async Task<IActionResult> UpdateAddressAsync([FromRoute] int id, [FromBody] WorkflowUpdateViewModel input)
+        public async Task<IActionResult> Update([FromRoute] int id, [FromBody] WorkflowUpdateViewModel input)
         {
             var workflow = await _workflowRepo.GetByIdAsync(id);
             if (workflow == null)
