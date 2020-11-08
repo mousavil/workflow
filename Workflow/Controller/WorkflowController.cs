@@ -38,26 +38,30 @@ namespace Workflow.Controller
             return Ok(output);
         }
 
-        [HttpGet("[action]/{id}")]
-        public async Task<IActionResult> GetById([FromRoute] int id)
+        [HttpPost("[action]")]
+        public async Task<IActionResult> GetById([FromBody] GetWorkflow input)
         {
-            var workflow = await _workflowRepo.GetByIdAsync(id);
+            
+            var workflow = await _workflowRepo.GetByIdAsync(input.Id);
 
             if (workflow == null)
                 return NotFound("شهر یافت نشد");
 
+            if (workflow.CreatorId != input.UserId)
+                return Unauthorized();
+            
             var output = new
             {
-                Name = workflow.Name,
-                Description  = workflow.Description,
-                Status  = workflow.Status
+                 workflow.Name,
+                 workflow.Description,
+                 workflow.Status
             };
 
             return Ok(output);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Add([FromRoute] WorkflowAddViewModel input)
+        public async Task<IActionResult> Add([FromBody] WorkflowAddViewModel input)
         {
             var isDuplicate = (await _workflowRepo.GetByConditionAsync(x => x.Name == input.Name)).Any();
             if( isDuplicate)

@@ -12,6 +12,7 @@
           <e p="WorkflowDbContext.cs" t="Include" />
         </e>
         <e p="Controller" t="Include">
+          <e p="StepController.cs" t="Include" />
           <e p="WorkflowController.cs" t="Include" />
         </e>
         <e p="Interfaces" t="Include">
@@ -41,6 +42,8 @@
           <e p="Assert.cs" t="Include" />
         </e>
         <e p="ViewModels" t="Include">
+          <e p="StepAddViewModel.cs" t="Include" />
+          <e p="StepUpdateViewModel.cs" t="Include" />
           <e p="WorkflowAddViewModel.cs" t="Include" />
           <e p="WorkflowUpdateViewModel.cs" t="Include" />
         </e>
