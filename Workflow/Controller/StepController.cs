@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Internal;
 using Workflow.Context;
 using Workflow.Interfaces;
 using Workflow.Models.Postgresql;
@@ -12,14 +13,15 @@ namespace Workflow.Controller
 {
     [Route("api/[controller]")]
     [ApiController]
-    
     public class StepController : ControllerBase
     {
         private readonly IBaseRepository<Steps, WorkflowDbContext> _stepRepo;
         private readonly IBaseRepository<Workflows, WorkflowDbContext> _workflowRepo;
-        public StepController(IBaseRepository<Steps, WorkflowDbContext> stepRepo, IBaseRepository<Workflows, WorkflowDbContext> workflowRepo)
+
+        public StepController(IBaseRepository<Steps, WorkflowDbContext> stepRepo,
+                              IBaseRepository<Workflows, WorkflowDbContext> workflowRepo)
         {
-            _stepRepo         = stepRepo;
+            _stepRepo     = stepRepo;
             _workflowRepo = workflowRepo;
         }
 
@@ -27,76 +29,97 @@ namespace Workflow.Controller
         [HttpGet("[action]/{id}")]
         public async Task<IActionResult> GetByWorkflowId([FromRoute] int id)
         {
-            var workflows = await _stepRepo.GetByConditionAsync(x=>x.WorkflowId == id);
-            
-            var output = workflows.Select(item => new 
-            {
-                 item.StepId,
-                 item.Name,
-                 item.Status,
-                 item.AcceptStepId,
-                 item.RejectStepId,
-                
+            var workflows = await _stepRepo.GetByConditionAsync(x => x.WorkflowId == id);
 
+            var output = workflows.Select(item => new
+            {
+                item.StepId,
+                item.Name,
+                item.Status,
+                item.AcceptStepId,
+                item.RejectStepId,
             }).ToList();
             return Ok(output);
         }
-        
-        [HttpPost]
-        public async Task<IActionResult> Add([FromBody] List<StepAddViewModel> input)
+
+        [HttpPost("[action]/{workflowId}")]
+        public async Task<IActionResult> Add([FromRoute] int workflowId, [FromBody] List<StepAddViewModel> input)
         {
-            var isDuplicate = (await _stepRepo.GetAllAsync()).Select(item => input.Select(x=>x.WorkflowId).Contains(item.WorkflowId) 
-                                                                             &&
-                                                                             input.Select(x=>x.Name).Contains(item.Name)).Any();
-            if( isDuplicate)
+            var isDuplicate = (await _stepRepo.GetAllAsync()).Select(x => x.WorkflowId == workflowId
+                                                                          &&
+                                                                          input.Select(y => y.Name).Contains(x.Name))
+                .Any();
+            if (isDuplicate)
                 return BadRequest("Duplicate");
-            var workflowIsExists =  (await _workflowRepo.GetAllAsync()).Where(item => input.Select(x=>x.WorkflowId).Contains(item.Id)); 
+
+            var workflowIsExists = (await _workflowRepo.GetByIdAsync(workflowId));
+
+            if (workflowIsExists == null)
+                return BadRequest("Workflow Does Not Exist");
+
+            var steps = input.Select(x => new Steps()
+            {
+                Name       = x.Name,
+                Status     = 0,
+                WorkflowId = workflowId,
+            });
+            await _stepRepo.AddRangeAsync(steps);
             
+            var addedSteps = (await _stepRepo.GetByConditionAsync(x => x.WorkflowId == workflowId)).OrderBy(x=>x.StepId).ToList();
+           
+            var updateSteps = new List<Steps>();
             
-            
-            // await _stepRepo.AddRangeAsync(new List<Steps>()
-            // {
-            //     Name = input.Name,
-            //     Status = 0,
-            //     WorkflowId = input.WorkflowId,
-            //     
-            // });
-            // var id = (await _workflowRepo.GetByConditionAsync(x => x.Name == input.Name)).First().Id;
-            return Ok(/*new {WorkflowId = id}*/);
+            foreach (var item in addedSteps)
+            {
+                updateSteps.Add(new Steps()
+                {
+                    StepId = item.StepId,
+                    Name = item.Name,
+                    Status = 0,
+                    WorkflowId = workflowId,
+                    AcceptStepId = addedSteps[input[addedSteps.IndexOf(item)].AcceptStepId].AcceptStepId,
+                    RejectStepId = addedSteps[input[addedSteps.IndexOf(item)].RejectStepId].RejectStepId
+                });
+            }
+
+            await _stepRepo.UpdateRangeAsync(updateSteps);
+            return Ok(updateSteps);
+
         }
-        
-           [HttpPut("[action]/{id}")]
+
+        [HttpPut("[action]/{id}")]
         public async Task<IActionResult> UpdateStepAsync([FromRoute] int id, [FromBody] StepUpdateViewModel input)
         {
-            var workflow = await _stepRepo.GetByIdAsync(id);
-            if (workflow == null)
+            var step = await _stepRepo.GetByIdAsync(id);
+            if (step == null)
                 return NotFound();
 
-            if ((await _stepRepo.GetByConditionAsync(x => x.Name == input.Name && x.WorkflowId == workflow.WorkflowId)).Any())
+            if ((await _stepRepo.GetByConditionAsync(x => x.Name == input.Name && x.WorkflowId == step.WorkflowId))
+                .Any())
                 return BadRequest("Name Exists");
-            
-            // var isExists = (await _stepRepo.GetAllAsync()).Select(item => input.Select(x=>x.WorkflowId).Contains(item.WorkflowId) 
-            //                                                                  &&
-            //                                                                  input.Select(x=>x.Name).Contains(item.Name)).Any();
-            workflow.Name = input.Name;
-            workflow.AcceptStepId = input.AcceptStepId;
-            workflow.RejectStepId = input.RejectStepId;
 
-            // await _workflowRepo.UpdateAsync(workflow);
+            var isExists = (await _stepRepo.GetByIdAsync(input.AcceptStepId))!=null &&
+                           (await _stepRepo.GetByIdAsync(input.RejectStepId))!=null;
+            if (!isExists)
+                return BadRequest("Accept Or Reject Does Not Exist");
+            
+            step.Name         = input.Name;
+            step.AcceptStepId = input.AcceptStepId;
+            step.RejectStepId = input.RejectStepId;
+
+             await _stepRepo.UpdateAsync(step);
             return Ok();
         }
 
         [HttpDelete("[action]/{id}")]
         public async Task<IActionResult> Delete([FromRoute] int id)
         {
-
-            var workflow = await _workflowRepo.GetByIdAsync(id);
-            if (workflow == null)
+            var step = await _stepRepo.GetByIdAsync(id);
+            if (step == null)
                 return NotFound();
 
-            await _workflowRepo.DeleteAsync(workflow);
+            await _stepRepo.DeleteAsync(step);
             return Ok();
         }
-
     }
-} 
+}
