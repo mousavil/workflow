@@ -4,8 +4,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Workflow.Context;
 using Workflow.Interfaces;
+using Workflow.Models.Enum;
 using Workflow.Models.Postgresql;
 using Workflow.ViewModels;
+using Type = Workflow.Models.Enum.Type;
 
 namespace Workflow.Controller
 {
@@ -15,9 +17,11 @@ namespace Workflow.Controller
     public class WorkflowsController : ControllerBase
     {
         private readonly IBaseRepository<Workflows, WorkflowDbContext> _workflowRepo;
-        public WorkflowsController(IBaseRepository<Workflows, WorkflowDbContext> workflowRepo)
+        private readonly IBaseRepository<Rules, WorkflowDbContext> _ruleRepo;
+        public WorkflowsController(IBaseRepository<Workflows, WorkflowDbContext> workflowRepo, IBaseRepository<Rules, WorkflowDbContext> ruleRepo)
         {
-            _workflowRepo = workflowRepo;
+            _workflowRepo  = workflowRepo;
+            _ruleRepo = ruleRepo;
         }
 
 
@@ -102,9 +106,14 @@ namespace Workflow.Controller
         {
 
             var workflow = await _workflowRepo.GetByIdAsync(id);
+            
+            var rule = (await _ruleRepo.GetByConditionAsync(x =>
+                x.EntityType == (short) EntityType.Workflow && x.ReferenceId == id)).FirstOrDefault(); 
             if (workflow == null)
                 return NotFound();
-
+            if (rule != null)
+                await _ruleRepo.DeleteAsync(rule);
+            
             await _workflowRepo.DeleteAsync(workflow);
             return Ok();
         }

@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Internal;
 using Workflow.Context;
 using Workflow.Interfaces;
+using Workflow.Models.Enum;
 using Workflow.Models.Postgresql;
 using Workflow.ViewModels;
 
@@ -17,12 +18,14 @@ namespace Workflow.Controller
     {
         private readonly IBaseRepository<Steps, WorkflowDbContext> _stepRepo;
         private readonly IBaseRepository<Workflows, WorkflowDbContext> _workflowRepo;
+        private readonly IBaseRepository<Rules, WorkflowDbContext> _ruleRepo;
 
         public StepController(IBaseRepository<Steps, WorkflowDbContext> stepRepo,
-                              IBaseRepository<Workflows, WorkflowDbContext> workflowRepo)
+                              IBaseRepository<Workflows, WorkflowDbContext> workflowRepo, IBaseRepository<Rules, WorkflowDbContext> ruleRepo)
         {
-            _stepRepo     = stepRepo;
-            _workflowRepo = workflowRepo;
+            _stepRepo      = stepRepo;
+            _workflowRepo  = workflowRepo;
+            _ruleRepo = ruleRepo;
         }
 
 
@@ -115,9 +118,15 @@ namespace Workflow.Controller
         public async Task<IActionResult> Delete([FromRoute] int id)
         {
             var step = await _stepRepo.GetByIdAsync(id);
+            
+            var rule = (await _ruleRepo.GetByConditionAsync(x =>
+                x.EntityType == (short) EntityType.Step && x.ReferenceId == id)).FirstOrDefault(); 
             if (step == null)
                 return NotFound();
-
+            
+            if (rule != null)
+                await _ruleRepo.DeleteAsync(rule);
+            
             await _stepRepo.DeleteAsync(step);
             return Ok();
         }

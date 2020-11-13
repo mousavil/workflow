@@ -13,20 +13,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6445d2aa-7fcf-447c-b95b-bbc5d0ac3826" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Workflow/Controller/RuleController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Workflow/Models/Enum/EntityType.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Workflow/Models/Enum/RuleType.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Workflow/ViewModels/AddRuleViewModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Workflow/ViewModels/RuleUpdateViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Workflow/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Workflow/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Workflow/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Workflow/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Workflow/Controller/StepController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Workflow/Controller/StepController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Workflow/Models/Postgresql/Rules.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Workflow/Models/Postgresql/Rules.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Workflow/Repositories/BaseRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Workflow/Repositories/BaseRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Workflow/ViewModels/StepAddViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Workflow/ViewModels/StepAddViewModel.cs" afterDir="false" />
-    </list>
+    <list default="true" id="6445d2aa-7fcf-447c-b95b-bbc5d0ac3826" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -129,7 +116,7 @@
       <workItem from="1604813817883" duration="4914000" />
       <workItem from="1604860542654" duration="4582000" />
       <workItem from="1605075529315" duration="212000" />
-      <workItem from="1605288249022" duration="9517000" />
+      <workItem from="1605288249022" duration="10103000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1604478681862</created>
@@ -187,7 +174,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604864584716</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="last commit">
+      <created>1605303598582</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1605303598582</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -210,20 +204,25 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit" />
+    <MESSAGE value="last commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="last commit" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1177" y="315" width="434" height="487" key="FileChooserDialogImpl" timestamp="1604817932507">
       <screen x="0" y="31" width="1920" height="1049" />
     </state>
     <state x="1177" y="315" width="434" height="487" key="FileChooserDialogImpl/0.31.1920.1049@0.31.1920.1049" timestamp="1604817932507" />
-    <state x="555" y="293" width="810" height="531" key="Vcs.Push.Dialog.v2" timestamp="1604864587165">
+    <state x="555" y="293" width="810" height="531" key="Vcs.Push.Dialog.v2" timestamp="1605303602703">
       <screen x="0" y="31" width="1920" height="1049" />
     </state>
-    <state x="555" y="293" width="810" height="531" key="Vcs.Push.Dialog.v2/0.31.1920.1049@0.31.1920.1049" timestamp="1604864587165" />
+    <state x="555" y="293" width="810" height="531" key="Vcs.Push.Dialog.v2/0.31.1920.1049@0.31.1920.1049" timestamp="1605303602703" />
     <state x="745" y="471" width="430" height="175" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604478964202">
       <screen x="0" y="31" width="1920" height="1049" />
     </state>
     <state x="745" y="471" width="430" height="175" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.31.1920.1049@0.31.1920.1049" timestamp="1604478964202" />
+    <state x="623" y="263" width="672" height="678" key="search.everywhere.popup" timestamp="1605303120178">
+      <screen x="0" y="31" width="1920" height="1049" />
+    </state>
+    <state x="623" y="263" width="672" height="678" key="search.everywhere.popup/0.31.1920.1049@0.31.1920.1049" timestamp="1605303120178" />
   </component>
 </project>
