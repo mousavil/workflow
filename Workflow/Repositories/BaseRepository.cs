@@ -38,7 +38,7 @@ namespace Workflow.Repositories
 
         public virtual async Task<IEnumerable<TEntity>> GetByConditionAsync(Expression<Func<TEntity, bool>> filter = null, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null, params Expression<Func<TEntity, object>>[] includes)
         {
-            IQueryable<TEntity> query = _context.Set<TEntity>();
+            IQueryable<TEntity> query = _context.Set<TEntity>().AsNoTracking();
             query = includes.Aggregate(query, (current, include) => current.Include(include));
 
             if (filter != null)
@@ -65,9 +65,11 @@ namespace Workflow.Repositories
         public virtual async Task AddRangeAsync(IEnumerable<TEntity> entities, bool saveNow = true)
         {
             Assert.NotNull(entities, nameof(entities));
-            await _dbSet.AddRangeAsync(entities);
+             _dbSet.AddRangeAsync(entities).Wait();
             if (saveNow)
                 await _context.SaveChangesAsync();
+            // _context.Entry(entities).State = EntityState.Detached;
+
         }
 
         public virtual async Task UpdateAsync(TEntity entity, bool saveNow = true)
@@ -84,6 +86,8 @@ namespace Workflow.Repositories
             _dbSet.UpdateRange(entities);
             if (saveNow)
                 await _context.SaveChangesAsync();
+            // _context.Entry(entities).State = EntityState.Modified;
+
         }
 
         public virtual async Task DeleteAsync(TEntity entity, bool saveNow = true)
@@ -102,6 +106,10 @@ namespace Workflow.Repositories
                 await _context.SaveChangesAsync();
         }
         #endregion
+        
+        
+        
     }
+  
 }
 

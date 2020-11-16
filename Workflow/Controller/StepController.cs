@@ -70,18 +70,28 @@ namespace Workflow.Controller
             
             var addedSteps = (await _stepRepo.GetByConditionAsync(x => x.WorkflowId == workflowId)).OrderBy(x=>x.StepId).ToList();
            
-            var updateSteps = new List<Steps>();
-            
+            var  updateSteps = new List<Steps>();
+            int? accept;
+            int? reject;
             foreach (var item in addedSteps)
             {
+               
+                if (input[addedSteps.IndexOf(item)].AcceptStepId != null)
+                    accept = addedSteps[(int) input[addedSteps.IndexOf(item)].AcceptStepId].StepId;
+                else
+                    accept = null;
+                if (input[addedSteps.IndexOf(item)].RejectStepId != null)
+                    reject = addedSteps[(int) input[addedSteps.IndexOf(item)].RejectStepId].StepId;
+                else
+                    reject = null;
                 updateSteps.Add(new Steps()
                 {
                     StepId = item.StepId,
                     Name = item.Name,
                     Status = 0,
                     WorkflowId = workflowId,
-                    AcceptStepId = addedSteps[input[addedSteps.IndexOf(item)].AcceptStepId].AcceptStepId,
-                    RejectStepId = addedSteps[input[addedSteps.IndexOf(item)].RejectStepId].RejectStepId
+                    AcceptStepId =accept,
+                    RejectStepId = reject
                 });
             }
 

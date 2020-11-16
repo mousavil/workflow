@@ -8,8 +8,8 @@ namespace Workflow.Models.Postgresql
         [Key]
         public int StepId { get; set; }
         
-        public int AcceptStepId { get; set; }
-        public int RejectStepId { get; set; }
+        public int? AcceptStepId { get; set; }
+        public int? RejectStepId { get; set; }
         
         [Required]
         public string Name { get; set; }

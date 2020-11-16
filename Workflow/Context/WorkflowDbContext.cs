@@ -1,5 +1,6 @@
 ﻿
 using Microsoft.EntityFrameworkCore;
+using Workflow.Models.Postgresql;
 
 namespace Workflow.Context
 {
@@ -13,8 +14,14 @@ namespace Workflow.Context
             Options = options;
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
+        {   
+            base.OnModelCreating(modelBuilder);
+            
+
         }
+        public DbSet<Workflows> Workflows { get; set; }
+        public DbSet<Rules> Rules{ get; set; }
+        public DbSet<Steps> Steps{ get; set; }
 
     }
 }

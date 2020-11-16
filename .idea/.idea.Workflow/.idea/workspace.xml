@@ -13,9 +13,18 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6445d2aa-7fcf-447c-b95b-bbc5d0ac3826" name="Default Changelist" comment="">
+    <list default="true" id="6445d2aa-7fcf-447c-b95b-bbc5d0ac3826" name="Default Changelist" comment="commit">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Workflow/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Workflow/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Workflow/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Workflow/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Workflow/Context/WorkflowDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Workflow/Context/WorkflowDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Workflow/Controller/StepController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Workflow/Controller/StepController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Workflow/Models/Postgresql/Steps.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Workflow/Models/Postgresql/Steps.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Workflow/Models/Postgresql/Tasks.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Workflow/Models/Postgresql/Workflows.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Workflow/Models/Postgresql/Workflows.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Workflow/Repositories/BaseRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Workflow/Repositories/BaseRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Workflow/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Workflow/Startup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Workflow/ViewModels/StepAddViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Workflow/ViewModels/StepAddViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Workflow/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Workflow/appsettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,12 +35,12 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/45212CA3-153F-478C-B9B1-60517BBB01B3/1D8/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Workflow/obj/Debug/netcoreapp3.1/.NETCoreApp,Version=v3.1.AssemblyAttributes.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Workflow/Context/WorkflowDbContext.cs" />
         <option value="$PROJECT_DIR$/Workflow/Interfaces/IBaseRepository.cs" />
         <option value="$PROJECT_DIR$/Workflow/Utilities/Assert.cs" />
         <option value="$PROJECT_DIR$/Workflow/Models/Postgresql/Tasks.cs" />
@@ -39,12 +48,8 @@
         <option value="$PROJECT_DIR$/Workflow/Models/Enum/StepStatus.cs" />
         <option value="$PROJECT_DIR$/Workflow/ViewModels/WorkflowUpdateViewModel.cs" />
         <option value="$PROJECT_DIR$/Workflow/ViewModels/WorkflowAddViewModel.cs" />
-        <option value="$PROJECT_DIR$/Workflow/Models/Postgresql/Steps.cs" />
         <option value="$PROJECT_DIR$/Workflow/ViewModels/StepUpdateViewModel.cs" />
         <option value="$PROJECT_DIR$/Workflow/ViewModels/WorkflowGet.cs" />
-        <option value="$PROJECT_DIR$/Workflow/ViewModels/StepAddViewModel.cs" />
-        <option value="$PROJECT_DIR$/Workflow/Repositories/BaseRepository.cs" />
-        <option value="$PROJECT_DIR$/Workflow/Models/Postgresql/Workflows.cs" />
         <option value="$PROJECT_DIR$/Workflow/Models/Enum/RuleType.cs" />
         <option value="$PROJECT_DIR$/Workflow/Models/Postgresql/Rules.cs" />
         <option value="$PROJECT_DIR$/Workflow/Models/Enum/EntityType.cs" />
@@ -52,8 +57,14 @@
         <option value="$PROJECT_DIR$/Workflow/ViewModels/RuleUpdateViewModel.cs" />
         <option value="$PROJECT_DIR$/Workflow/Controller/RuleController.cs" />
         <option value="$PROJECT_DIR$/Workflow/Controller/WorkflowController.cs" />
-        <option value="$PROJECT_DIR$/Workflow/Controller/StepController.cs" />
+        <option value="$PROJECT_DIR$/Workflow/Models/Postgresql/Workflows.cs" />
+        <option value="$PROJECT_DIR$/Workflow/Context/WorkflowDbContext.cs" />
+        <option value="$PROJECT_DIR$/Workflow/appsettings.json" />
+        <option value="$PROJECT_DIR$/Workflow/ViewModels/StepAddViewModel.cs" />
+        <option value="$PROJECT_DIR$/Workflow/Models/Postgresql/Steps.cs" />
         <option value="$PROJECT_DIR$/Workflow/Startup.cs" />
+        <option value="$PROJECT_DIR$/Workflow/Controller/StepController.cs" />
+        <option value="$PROJECT_DIR$/Workflow/Repositories/BaseRepository.cs" />
       </list>
     </option>
   </component>
@@ -66,9 +77,12 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34997287" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.30005425" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Git/Back/BaseProject.sln" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected=".NET Launch Settings Profile.Workflow">
@@ -120,7 +134,7 @@
       <workItem from="1604860542654" duration="4582000" />
       <workItem from="1605075529315" duration="212000" />
       <workItem from="1605288249022" duration="10435000" />
-      <workItem from="1605554316619" duration="761000" />
+      <workItem from="1605554316619" duration="7813000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1604478681862</created>
@@ -192,7 +206,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605303915983</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="commit">
+      <created>1605555088020</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1605555088020</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -214,24 +235,108 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="commit" />
     <MESSAGE value="last commit" />
     <MESSAGE value="bug fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="bug fix" />
+    <MESSAGE value="commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit" />
   </component>
   <component name="WindowStateProjectService">
+    <state width="483" height="525" key="DebuggerActiveHint" timestamp="1605559819441">
+      <screen x="0" y="31" width="1920" height="1049" />
+    </state>
+    <state width="483" height="525" key="DebuggerActiveHint/0.31.1920.1049@0.31.1920.1049" timestamp="1605559819441" />
     <state x="1177" y="315" width="434" height="487" key="FileChooserDialogImpl" timestamp="1604817932507">
       <screen x="0" y="31" width="1920" height="1049" />
     </state>
     <state x="1177" y="315" width="434" height="487" key="FileChooserDialogImpl/0.31.1920.1049@0.31.1920.1049" timestamp="1604817932507" />
-    <state x="555" y="293" width="810" height="531" key="Vcs.Push.Dialog.v2" timestamp="1605303919335">
+    <state width="1874" height="369" key="GridCell.Tab.0.bottom" timestamp="1605561589768">
       <screen x="0" y="31" width="1920" height="1049" />
     </state>
-    <state x="555" y="293" width="810" height="531" key="Vcs.Push.Dialog.v2/0.31.1920.1049@0.31.1920.1049" timestamp="1605303919335" />
-    <state x="745" y="471" width="430" height="175" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604478964202">
+    <state width="1874" height="369" key="GridCell.Tab.0.bottom/0.31.1920.1049@0.31.1920.1049" timestamp="1605561589768" />
+    <state width="1874" height="369" key="GridCell.Tab.0.center" timestamp="1605561589767">
       <screen x="0" y="31" width="1920" height="1049" />
     </state>
-    <state x="745" y="471" width="430" height="175" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.31.1920.1049@0.31.1920.1049" timestamp="1604478964202" />
+    <state width="1874" height="369" key="GridCell.Tab.0.center/0.31.1920.1049@0.31.1920.1049" timestamp="1605561589767" />
+    <state width="1874" height="369" key="GridCell.Tab.0.left" timestamp="1605561589767">
+      <screen x="0" y="31" width="1920" height="1049" />
+    </state>
+    <state width="1874" height="369" key="GridCell.Tab.0.left/0.31.1920.1049@0.31.1920.1049" timestamp="1605561589767" />
+    <state width="1874" height="369" key="GridCell.Tab.0.right" timestamp="1605561589768">
+      <screen x="0" y="31" width="1920" height="1049" />
+    </state>
+    <state width="1874" height="369" key="GridCell.Tab.0.right/0.31.1920.1049@0.31.1920.1049" timestamp="1605561589768" />
+    <state width="1874" height="369" key="GridCell.Tab.1.bottom" timestamp="1605561589703">
+      <screen x="0" y="31" width="1920" height="1049" />
+    </state>
+    <state width="1874" height="369" key="GridCell.Tab.1.bottom/0.31.1920.1049@0.31.1920.1049" timestamp="1605561589703" />
+    <state width="1874" height="369" key="GridCell.Tab.1.center" timestamp="1605561589703">
+      <screen x="0" y="31" width="1920" height="1049" />
+    </state>
+    <state width="1874" height="369" key="GridCell.Tab.1.center/0.31.1920.1049@0.31.1920.1049" timestamp="1605561589703" />
+    <state width="1874" height="369" key="GridCell.Tab.1.left" timestamp="1605561589703">
+      <screen x="0" y="31" width="1920" height="1049" />
+    </state>
+    <state width="1874" height="369" key="GridCell.Tab.1.left/0.31.1920.1049@0.31.1920.1049" timestamp="1605561589703" />
+    <state width="1874" height="369" key="GridCell.Tab.1.right" timestamp="1605561589703">
+      <screen x="0" y="31" width="1920" height="1049" />
+    </state>
+    <state width="1874" height="369" key="GridCell.Tab.1.right/0.31.1920.1049@0.31.1920.1049" timestamp="1605561589703" />
+    <state width="1874" height="369" key="GridCell.Tab.2.bottom" timestamp="1605561589704">
+      <screen x="0" y="31" width="1920" height="1049" />
+    </state>
+    <state width="1874" height="369" key="GridCell.Tab.2.bottom/0.31.1920.1049@0.31.1920.1049" timestamp="1605561589704" />
+    <state width="1874" height="369" key="GridCell.Tab.2.center" timestamp="1605561589703">
+      <screen x="0" y="31" width="1920" height="1049" />
+    </state>
+    <state width="1874" height="369" key="GridCell.Tab.2.center/0.31.1920.1049@0.31.1920.1049" timestamp="1605561589703" />
+    <state width="1874" height="369" key="GridCell.Tab.2.left" timestamp="1605561589703">
+      <screen x="0" y="31" width="1920" height="1049" />
+    </state>
+    <state width="1874" height="369" key="GridCell.Tab.2.left/0.31.1920.1049@0.31.1920.1049" timestamp="1605561589703" />
+    <state width="1874" height="369" key="GridCell.Tab.2.right" timestamp="1605561589703">
+      <screen x="0" y="31" width="1920" height="1049" />
+    </state>
+    <state width="1874" height="369" key="GridCell.Tab.2.right/0.31.1920.1049@0.31.1920.1049" timestamp="1605561589703" />
+    <state width="1874" height="369" key="GridCell.Tab.3.bottom" timestamp="1605561589704">
+      <screen x="0" y="31" width="1920" height="1049" />
+    </state>
+    <state width="1874" height="369" key="GridCell.Tab.3.bottom/0.31.1920.1049@0.31.1920.1049" timestamp="1605561589704" />
+    <state width="1874" height="369" key="GridCell.Tab.3.center" timestamp="1605561589704">
+      <screen x="0" y="31" width="1920" height="1049" />
+    </state>
+    <state width="1874" height="369" key="GridCell.Tab.3.center/0.31.1920.1049@0.31.1920.1049" timestamp="1605561589704" />
+    <state width="1874" height="369" key="GridCell.Tab.3.left" timestamp="1605561589704">
+      <screen x="0" y="31" width="1920" height="1049" />
+    </state>
+    <state width="1874" height="369" key="GridCell.Tab.3.left/0.31.1920.1049@0.31.1920.1049" timestamp="1605561589704" />
+    <state width="1874" height="369" key="GridCell.Tab.3.right" timestamp="1605561589704">
+      <screen x="0" y="31" width="1920" height="1049" />
+    </state>
+    <state width="1874" height="369" key="GridCell.Tab.3.right/0.31.1920.1049@0.31.1920.1049" timestamp="1605561589704" />
+    <state width="1874" height="369" key="GridCell.Tab.4.bottom" timestamp="1605561589704">
+      <screen x="0" y="31" width="1920" height="1049" />
+    </state>
+    <state width="1874" height="369" key="GridCell.Tab.4.bottom/0.31.1920.1049@0.31.1920.1049" timestamp="1605561589704" />
+    <state width="1874" height="369" key="GridCell.Tab.4.center" timestamp="1605561589704">
+      <screen x="0" y="31" width="1920" height="1049" />
+    </state>
+    <state width="1874" height="369" key="GridCell.Tab.4.center/0.31.1920.1049@0.31.1920.1049" timestamp="1605561589704" />
+    <state width="1874" height="369" key="GridCell.Tab.4.left" timestamp="1605561589704">
+      <screen x="0" y="31" width="1920" height="1049" />
+    </state>
+    <state width="1874" height="369" key="GridCell.Tab.4.left/0.31.1920.1049@0.31.1920.1049" timestamp="1605561589704" />
+    <state width="1874" height="369" key="GridCell.Tab.4.right" timestamp="1605561589704">
+      <screen x="0" y="31" width="1920" height="1049" />
+    </state>
+    <state width="1874" height="369" key="GridCell.Tab.4.right/0.31.1920.1049@0.31.1920.1049" timestamp="1605561589704" />
+    <state x="555" y="293" width="810" height="531" key="Vcs.Push.Dialog.v2" timestamp="1605555097335">
+      <screen x="0" y="31" width="1920" height="1049" />
+    </state>
+    <state x="555" y="293" width="810" height="531" key="Vcs.Push.Dialog.v2/0.31.1920.1049@0.31.1920.1049" timestamp="1605555097335" />
+    <state x="745" y="471" width="430" height="175" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605555093275">
+      <screen x="0" y="31" width="1920" height="1049" />
+    </state>
+    <state x="745" y="471" width="430" height="175" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.31.1920.1049@0.31.1920.1049" timestamp="1605555093275" />
     <state x="623" y="263" width="672" height="678" key="search.everywhere.popup" timestamp="1605303120178">
       <screen x="0" y="31" width="1920" height="1049" />
     </state>

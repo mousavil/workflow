@@ -14,8 +14,6 @@ namespace Workflow.Models.Postgresql
         public DateTime CreationDate { get; set; }   
         public short Status { get; set; }
         
-        public List<Rules> Rules;
-        
         public List<Steps> Steps;
         
     }

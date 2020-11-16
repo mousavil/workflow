@@ -27,19 +27,6 @@ namespace Workflow
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
-
-            services.AddDbContext<WorkflowDbContext>(options =>
-            {
-                var postgresSqlConnectionString = Configuration["ConnectionStrings:PostgresSqlConnection"];
-                options.UseNpgsql(postgresSqlConnectionString);
-                //options.EnableSensitiveDataLogging();
-            });
-            services.AddScoped(typeof(IBaseRepository<,>), typeof(BaseRepository<,>));
-
-            
-            services.AddMvc(option => option.EnableEndpointRouting = false).SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
-            
             services.AddCors(options =>
             {
                 options.AddPolicy("AllowMyOrigin", builder =>
@@ -47,10 +34,25 @@ namespace Workflow
                     builder.AllowAnyOrigin()
                         .AllowAnyMethod()
                         .AllowAnyHeader()
-                        .AllowCredentials()
+                        // .AllowCredentials()
                         .Build();
                 });
             });
+            
+            services.AddControllers();
+
+            services.AddDbContext<WorkflowDbContext>(options =>
+            {
+                var postgresSqlConnectionString = Configuration["ConnectionStrings:PostgresSqlConnection"];
+                options.UseNpgsql(postgresSqlConnectionString);
+                options.EnableSensitiveDataLogging();
+            });
+            services.AddScoped(typeof(IBaseRepository<,>), typeof(BaseRepository<,>));
+
+            
+            services.AddMvc(option => option.EnableEndpointRouting = false).SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
+            
+           
 
             services.AddSwaggerGen(c =>
             {
@@ -74,11 +76,11 @@ namespace Workflow
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseCors("AllowMyOrigin");
 
             
             app.UseRouting();
 
+            app.UseCors("AllowMyOrigin");
 
             app.UseEndpoints(endpoints =>
             {

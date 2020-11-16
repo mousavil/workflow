@@ -8,9 +8,8 @@ namespace Workflow.ViewModels
     {
         [Required]
         public string Name { get; set; }
-        [Required]
-        public int AcceptStepId { get; set; }     
-        public int RejectStepId { get; set; }
+        public int? AcceptStepId { get; set; }     
+        public int? RejectStepId { get; set; }
         
     }
 }

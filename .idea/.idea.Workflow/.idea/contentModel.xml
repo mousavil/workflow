@@ -19,6 +19,11 @@
         <e p="Interfaces" t="Include">
           <e p="IBaseRepository.cs" t="Include" />
         </e>
+        <e p="Migrations" t="Include">
+          <e p="20201116195227_inital.Designer.cs" t="Include" />
+          <e p="20201116195227_inital.cs" t="Include" />
+          <e p="WorkflowDbContextModelSnapshot.cs" t="Include" />
+        </e>
         <e p="Models" t="Include">
           <e p="Enum" t="Include">
             <e p="EntityType.cs" t="Include" />
@@ -29,7 +34,6 @@
           <e p="Postgresql" t="Include">
             <e p="Rules.cs" t="Include" />
             <e p="Steps.cs" t="Include" />
-            <e p="Tasks.cs" t="Include" />
             <e p="Workflows.cs" t="Include" />
           </e>
         </e>
