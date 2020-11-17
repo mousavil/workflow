@@ -95,10 +95,18 @@ namespace Workflow.Controller
                 });
             }
 
-            await _stepRepo.UpdateRangeAsync(updateSteps);
+    
             return Ok(updateSteps);
 
         }
+        
+        [HttpPost("[action]")]
+        public async Task<IActionResult> UpdateAfterCreate([FromBody]List<Steps> input)
+        {
+            await _stepRepo.UpdateRangeAsync(input);
+            return Ok();
+        }
+
 
         [HttpPut("[action]/{id}")]
         public async Task<IActionResult> UpdateStepAsync([FromRoute] int id, [FromBody] StepUpdateViewModel input)
