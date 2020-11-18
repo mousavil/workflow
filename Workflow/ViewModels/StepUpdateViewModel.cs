@@ -5,6 +5,7 @@ namespace Workflow.ViewModels
     public class StepUpdateViewModel
     {
         
+        public int StepId { get; set; }
         public int AcceptStepId { get; set; }
         public int RejectStepId { get; set; }
         

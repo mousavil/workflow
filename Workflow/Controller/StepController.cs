@@ -32,7 +32,7 @@ namespace Workflow.Controller
         [HttpGet("[action]/{id}")]
         public async Task<IActionResult> GetByWorkflowId([FromRoute] int id)
         {
-            var workflows = await _stepRepo.GetByConditionAsync(x => x.WorkflowId == id);
+            var workflows = (await _stepRepo.GetByConditionAsync(x => x.WorkflowId == id)).OrderBy(x=>x.StepId);
 
             var output = workflows.Select(item => new
             {
@@ -111,28 +111,30 @@ namespace Workflow.Controller
         }
 
 
-        [HttpPut("[action]/{id}")]
-        public async Task<IActionResult> UpdateStepAsync([FromRoute] int id, [FromBody] StepUpdateViewModel input)
+        [HttpPut("[action]/{workflowId}")]
+        public async Task<IActionResult> UpdateStepAsync([FromRoute] int workflowId,[FromBody] List<StepUpdateViewModel> input)
         {
-            var step = await _stepRepo.GetByIdAsync(id);
-            if (step == null)
-                return NotFound();
+            var steps = (await _stepRepo.GetByConditionAsync(x => x.WorkflowId == workflowId)).ToList();
+            var validateSteps = steps
+                .Select(x=>input.Select(y => y.StepId).Contains(x.StepId)
+                           && 
+                           input.Select(y => y.Name).Contains(x.Name)).Count();
+            if (validateSteps != input.Count)
+                return BadRequest();
 
-            if ((await _stepRepo.GetByConditionAsync(x => x.Name == input.Name && x.WorkflowId == step.WorkflowId))
-                .Any())
-                return BadRequest("Name Exists");
 
-            var isExists = (await _stepRepo.GetByIdAsync(input.AcceptStepId))!=null &&
-                           (await _stepRepo.GetByIdAsync(input.RejectStepId))!=null;
-            if (!isExists)
-                return BadRequest("Accept Or Reject Does Not Exist");
+            var output = steps.Join(input, x => x.StepId, y => y.StepId, (x, y) => new Steps()
+            {
+                StepId = x.StepId,
+                Locations = y.Locations,
+                Name = y.Name,
+                Status = x.Status,
+                AcceptStepId = y.AcceptStepId,
+                RejectStepId = y.RejectStepId,
+                WorkflowId = x.WorkflowId
+            });
             
-            step.Name         = input.Name;
-            step.AcceptStepId = input.AcceptStepId;
-            step.RejectStepId = input.RejectStepId;
-            step.Locations = input.Locations;
-
-             await _stepRepo.UpdateAsync(step);
+             await _stepRepo.UpdateRangeAsync(output);
             return Ok();
         }
 
