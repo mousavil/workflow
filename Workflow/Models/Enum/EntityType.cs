@@ -3,7 +3,7 @@ namespace Workflow.Models.Enum
 
     public enum EntityType
     {
-        Workflow,
+        Workflow=1,
         Step
     }
 }

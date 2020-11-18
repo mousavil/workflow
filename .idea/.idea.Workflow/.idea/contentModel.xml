@@ -31,7 +31,9 @@
             <e p="EntityType.cs" t="Include" />
             <e p="RuleType.cs" t="Include" />
             <e p="StepStatus.cs" t="Include" />
+            <e p="StepType.cs" t="Include" />
             <e p="WorkflowStatus.cs" t="Include" />
+            <e p="WorkflowType.cs" t="Include" />
           </e>
           <e p="Postgresql" t="Include">
             <e p="Rules.cs" t="Include" />

@@ -2,10 +2,10 @@ namespace Workflow.Models.Enum
 {
     public enum StepStatus
     {
-        IsChecking =1,
+        WaitingForPrevious =1,
+        IsChecking ,
         Denied ,
         Confirmed ,
-        ReChecking ,
         Expired ,
         
     }

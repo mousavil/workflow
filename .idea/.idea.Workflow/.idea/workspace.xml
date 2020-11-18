@@ -14,8 +14,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6445d2aa-7fcf-447c-b95b-bbc5d0ac3826" name="Default Changelist" comment="commit">
+      <change afterPath="$PROJECT_DIR$/Workflow/Models/Enum/StepType.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Workflow/Models/Enum/WorkflowType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Workflow/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Workflow/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Workflow/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Workflow/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Workflow/Controller/RuleController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Workflow/Controller/RuleController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Workflow/Controller/StepController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Workflow/Controller/StepController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Workflow/Models/Enum/EntityType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Workflow/Models/Enum/EntityType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Workflow/Models/Enum/RuleType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Workflow/Models/Enum/RuleType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Workflow/Models/Enum/StepStatus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Workflow/Models/Enum/StepStatus.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Workflow/Models/Postgresql/Steps.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Workflow/Models/Postgresql/Steps.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Workflow/ViewModels/StepAddViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Workflow/ViewModels/StepAddViewModel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Workflow/ViewModels/StepUpdateViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Workflow/ViewModels/StepUpdateViewModel.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -37,25 +46,27 @@
         <option value="$PROJECT_DIR$/Workflow/Utilities/Assert.cs" />
         <option value="$PROJECT_DIR$/Workflow/Models/Postgresql/Tasks.cs" />
         <option value="$PROJECT_DIR$/Workflow/Models/Enum/Workflow.cs" />
-        <option value="$PROJECT_DIR$/Workflow/Models/Enum/StepStatus.cs" />
         <option value="$PROJECT_DIR$/Workflow/ViewModels/WorkflowUpdateViewModel.cs" />
         <option value="$PROJECT_DIR$/Workflow/ViewModels/WorkflowAddViewModel.cs" />
         <option value="$PROJECT_DIR$/Workflow/ViewModels/WorkflowGet.cs" />
-        <option value="$PROJECT_DIR$/Workflow/Models/Enum/RuleType.cs" />
         <option value="$PROJECT_DIR$/Workflow/Models/Postgresql/Rules.cs" />
-        <option value="$PROJECT_DIR$/Workflow/Models/Enum/EntityType.cs" />
         <option value="$PROJECT_DIR$/Workflow/ViewModels/AddRuleViewModel.cs" />
         <option value="$PROJECT_DIR$/Workflow/ViewModels/RuleUpdateViewModel.cs" />
-        <option value="$PROJECT_DIR$/Workflow/Controller/RuleController.cs" />
         <option value="$PROJECT_DIR$/Workflow/Controller/WorkflowController.cs" />
         <option value="$PROJECT_DIR$/Workflow/Models/Postgresql/Workflows.cs" />
         <option value="$PROJECT_DIR$/Workflow/Context/WorkflowDbContext.cs" />
         <option value="$PROJECT_DIR$/Workflow/appsettings.json" />
         <option value="$PROJECT_DIR$/Workflow/Startup.cs" />
         <option value="$PROJECT_DIR$/Workflow/Repositories/BaseRepository.cs" />
+        <option value="$PROJECT_DIR$/Workflow/Models/Enum/StepStatus.cs" />
+        <option value="$PROJECT_DIR$/Workflow/Models/Enum/EntityType.cs" />
+        <option value="$PROJECT_DIR$/Workflow/Models/Enum/RuleType.cs" />
+        <option value="$PROJECT_DIR$/Workflow/Models/Enum/WorkflowType.cs" />
+        <option value="$PROJECT_DIR$/Workflow/Controller/RuleController.cs" />
+        <option value="$PROJECT_DIR$/Workflow/Models/Enum/StepType.cs" />
         <option value="$PROJECT_DIR$/Workflow/Models/Postgresql/Steps.cs" />
-        <option value="$PROJECT_DIR$/Workflow/ViewModels/StepAddViewModel.cs" />
         <option value="$PROJECT_DIR$/Workflow/ViewModels/StepUpdateViewModel.cs" />
+        <option value="$PROJECT_DIR$/Workflow/ViewModels/StepAddViewModel.cs" />
         <option value="$PROJECT_DIR$/Workflow/Controller/StepController.cs" />
       </list>
     </option>
@@ -129,7 +140,7 @@
       <workItem from="1605554316619" duration="8929000" />
       <workItem from="1605606675025" duration="3405000" />
       <workItem from="1605719181868" duration="801000" />
-      <workItem from="1605723962746" duration="2028000" />
+      <workItem from="1605723962746" duration="4947000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1604478681862</created>
@@ -236,7 +247,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605719961416</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="commit">
+      <created>1605725995526</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1605725995526</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -272,22 +290,22 @@
       <screen x="0" y="31" width="1920" height="1049" />
     </state>
     <state x="1177" y="315" width="434" height="487" key="FileChooserDialogImpl/0.31.1920.1049@0.31.1920.1049" timestamp="1604817932507" />
-    <state width="1874" height="369" key="GridCell.Tab.0.bottom" timestamp="1605608107421">
+    <state width="1874" height="369" key="GridCell.Tab.0.bottom" timestamp="1605728191884">
       <screen x="0" y="31" width="1920" height="1049" />
     </state>
-    <state width="1874" height="369" key="GridCell.Tab.0.bottom/0.31.1920.1049@0.31.1920.1049" timestamp="1605608107421" />
-    <state width="1874" height="369" key="GridCell.Tab.0.center" timestamp="1605608107421">
+    <state width="1874" height="369" key="GridCell.Tab.0.bottom/0.31.1920.1049@0.31.1920.1049" timestamp="1605728191884" />
+    <state width="1874" height="369" key="GridCell.Tab.0.center" timestamp="1605728191884">
       <screen x="0" y="31" width="1920" height="1049" />
     </state>
-    <state width="1874" height="369" key="GridCell.Tab.0.center/0.31.1920.1049@0.31.1920.1049" timestamp="1605608107421" />
-    <state width="1874" height="369" key="GridCell.Tab.0.left" timestamp="1605608107421">
+    <state width="1874" height="369" key="GridCell.Tab.0.center/0.31.1920.1049@0.31.1920.1049" timestamp="1605728191884" />
+    <state width="1874" height="369" key="GridCell.Tab.0.left" timestamp="1605728191884">
       <screen x="0" y="31" width="1920" height="1049" />
     </state>
-    <state width="1874" height="369" key="GridCell.Tab.0.left/0.31.1920.1049@0.31.1920.1049" timestamp="1605608107421" />
-    <state width="1874" height="369" key="GridCell.Tab.0.right" timestamp="1605608107421">
+    <state width="1874" height="369" key="GridCell.Tab.0.left/0.31.1920.1049@0.31.1920.1049" timestamp="1605728191884" />
+    <state width="1874" height="369" key="GridCell.Tab.0.right" timestamp="1605728191884">
       <screen x="0" y="31" width="1920" height="1049" />
     </state>
-    <state width="1874" height="369" key="GridCell.Tab.0.right/0.31.1920.1049@0.31.1920.1049" timestamp="1605608107421" />
+    <state width="1874" height="369" key="GridCell.Tab.0.right/0.31.1920.1049@0.31.1920.1049" timestamp="1605728191884" />
     <state width="1874" height="369" key="GridCell.Tab.1.bottom" timestamp="1605608107350">
       <screen x="0" y="31" width="1920" height="1049" />
     </state>
@@ -352,10 +370,10 @@
       <screen x="0" y="31" width="1920" height="1049" />
     </state>
     <state width="1874" height="369" key="GridCell.Tab.4.right/0.31.1920.1049@0.31.1920.1049" timestamp="1605608107352" />
-    <state x="555" y="293" width="810" height="531" key="Vcs.Push.Dialog.v2" timestamp="1605608397112">
+    <state x="555" y="293" width="810" height="531" key="Vcs.Push.Dialog.v2" timestamp="1605725999018">
       <screen x="0" y="31" width="1920" height="1049" />
     </state>
-    <state x="555" y="293" width="810" height="531" key="Vcs.Push.Dialog.v2/0.31.1920.1049@0.31.1920.1049" timestamp="1605608397112" />
+    <state x="555" y="293" width="810" height="531" key="Vcs.Push.Dialog.v2/0.31.1920.1049@0.31.1920.1049" timestamp="1605725999018" />
     <state x="745" y="471" width="430" height="175" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605608384794">
       <screen x="0" y="31" width="1920" height="1049" />
     </state>

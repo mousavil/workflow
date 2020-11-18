@@ -60,7 +60,9 @@ namespace Workflow.Controller
         [HttpPost("[action]")]
         public async Task<IActionResult> Add([FromBody] AddRuleViewModel input)
         {
-            var ruleExists = await _ruleRepo.GetByConditionAsync(x => x.Type == (short)input.Type && x.ReferenceId == input.ReferenceId) !=null;
+            var ruleExists =
+                await _ruleRepo.GetByConditionAsync(x =>
+                    x.Type == (short) input.Type && x.ReferenceId == input.ReferenceId) != null;
             if (ruleExists)
                 return BadRequest("Is Exists");
             bool workflowExist = false, stepExist = false;
@@ -76,22 +78,22 @@ namespace Workflow.Controller
 
             if (!workflowExist && !stepExist)
                 return BadRequest();
-            if (input.Type == Type.ExpireDate)
+            switch (input.Type)
             {
-                try
-                {
-                    Convert.ToDateTime(input.Condition);
-                }
-                catch (FormatException ex)
-                {
-                    return UnprocessableEntity();
-                }
-            }
-            else if (input.Type == Type.StepNumber )
-                if(!workflowExist)
-                return BadRequest("Workflow Not Found");
-                else
-                {
+                case Type.ExpireDate:
+                    try
+                    {
+                        Convert.ToDateTime(input.Condition);
+                    }
+                    catch (FormatException ex)
+                    {
+                        return UnprocessableEntity();
+                    }
+
+                    break;
+                case Type.StepNumber when !workflowExist:
+                    return BadRequest("Workflow Not Found");
+                case Type.StepNumber:
                     try
                     {
                         Convert.ToInt16(input.Condition);
@@ -100,7 +102,26 @@ namespace Workflow.Controller
                     {
                         return UnprocessableEntity();
                     }
-                }
+
+                    break;
+                case Type.WorkflowType when !workflowExist:
+                    return BadRequest("Workflow Not Found");
+                case Type.WorkflowType:
+                    try
+                    {
+                        var workflowType = Convert.ToInt16(input.Condition);
+                        if (workflowType != (short) Models.Enum.WorkflowType.Static &&
+                            workflowType != (short) Models.Enum.WorkflowType.Dynamic)
+                            return BadRequest("Invalid Workflow Type");
+                    }
+                    catch (FormatException ex)
+                    {
+                        return UnprocessableEntity();
+                    }
+
+                    break;
+            }
+
             await _ruleRepo.AddAsync(new Rules()
             {
                 Name        = input.Name,
@@ -116,12 +137,11 @@ namespace Workflow.Controller
         [HttpPut("[action]/{id}")]
         public async Task<IActionResult> Update([FromRoute] int id, [FromBody] RuleUpdateViewModel input)
         {
-
             var rule = await _ruleRepo.GetByIdAsync(id);
             if (rule == null)
                 return NotFound();
-            
-            if(rule.Type == (short)Type.ExpireDate)
+
+            if (rule.Type == (short) Type.ExpireDate)
                 try
                 {
                     Convert.ToDateTime(input.Condition);
@@ -130,7 +150,7 @@ namespace Workflow.Controller
                 {
                     return UnprocessableEntity();
                 }
-            else if(rule.Type == (short)Type.StepNumber)
+            else if (rule.Type == (short) Type.StepNumber)
             {
                 try
                 {
@@ -141,9 +161,22 @@ namespace Workflow.Controller
                     return UnprocessableEntity();
                 }
             }
-            rule.Name         = input.Name;
+            else if (rule.Type == (short) Type.WorkflowType)
+            {
+                try
+                {
+                    var workflowType = Convert.ToInt16(input.Condition);
+                    if (workflowType != (short) Models.Enum.WorkflowType.Static &&
+                        workflowType != (short) Models.Enum.WorkflowType.Dynamic)
+                        return BadRequest("Invalid Workflow Type");                }
+                catch (FormatException ex)
+                {
+                    return UnprocessableEntity();
+                }
+            }
+            rule.Name      = input.Name;
             rule.Condition = input.Condition;
-            
+
 
             await _ruleRepo.UpdateAsync(rule);
             return Ok();
