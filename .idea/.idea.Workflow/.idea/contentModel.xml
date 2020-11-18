@@ -22,6 +22,8 @@
         <e p="Migrations" t="Include">
           <e p="20201116195227_inital.Designer.cs" t="Include" />
           <e p="20201116195227_inital.cs" t="Include" />
+          <e p="20201118171613_second.Designer.cs" t="Include" />
+          <e p="20201118171613_second.cs" t="Include" />
           <e p="WorkflowDbContextModelSnapshot.cs" t="Include" />
         </e>
         <e p="Models" t="Include">

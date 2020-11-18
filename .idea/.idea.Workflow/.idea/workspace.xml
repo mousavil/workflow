@@ -13,11 +13,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6445d2aa-7fcf-447c-b95b-bbc5d0ac3826" name="Default Changelist" comment="commit">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Workflow/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Workflow/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Workflow/Models/Postgresql/Steps.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Workflow/Models/Postgresql/Steps.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Workflow/ViewModels/StepAddViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Workflow/ViewModels/StepAddViewModel.cs" afterDir="false" />
-    </list>
+    <list default="true" id="6445d2aa-7fcf-447c-b95b-bbc5d0ac3826" name="Default Changelist" comment="commit" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,6 +25,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/45212CA3-153F-478C-B9B1-60517BBB01B3/1D8/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Workflow/obj/Debug/netcoreapp3.1/.NETCoreApp,Version=v3.1.AssemblyAttributes.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///root/Desktop/workflow/Workflow/Controller/StepController.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -40,7 +37,6 @@
         <option value="$PROJECT_DIR$/Workflow/Models/Enum/StepStatus.cs" />
         <option value="$PROJECT_DIR$/Workflow/ViewModels/WorkflowUpdateViewModel.cs" />
         <option value="$PROJECT_DIR$/Workflow/ViewModels/WorkflowAddViewModel.cs" />
-        <option value="$PROJECT_DIR$/Workflow/ViewModels/StepUpdateViewModel.cs" />
         <option value="$PROJECT_DIR$/Workflow/ViewModels/WorkflowGet.cs" />
         <option value="$PROJECT_DIR$/Workflow/Models/Enum/RuleType.cs" />
         <option value="$PROJECT_DIR$/Workflow/Models/Postgresql/Rules.cs" />
@@ -54,9 +50,10 @@
         <option value="$PROJECT_DIR$/Workflow/appsettings.json" />
         <option value="$PROJECT_DIR$/Workflow/Startup.cs" />
         <option value="$PROJECT_DIR$/Workflow/Repositories/BaseRepository.cs" />
-        <option value="$PROJECT_DIR$/Workflow/Controller/StepController.cs" />
-        <option value="$PROJECT_DIR$/Workflow/ViewModels/StepAddViewModel.cs" />
         <option value="$PROJECT_DIR$/Workflow/Models/Postgresql/Steps.cs" />
+        <option value="$PROJECT_DIR$/Workflow/ViewModels/StepAddViewModel.cs" />
+        <option value="$PROJECT_DIR$/Workflow/ViewModels/StepUpdateViewModel.cs" />
+        <option value="$PROJECT_DIR$/Workflow/Controller/StepController.cs" />
       </list>
     </option>
   </component>
@@ -128,7 +125,7 @@
       <workItem from="1605288249022" duration="10435000" />
       <workItem from="1605554316619" duration="8929000" />
       <workItem from="1605606675025" duration="3405000" />
-      <workItem from="1605719181868" duration="315000" />
+      <workItem from="1605719181868" duration="801000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1604478681862</created>
@@ -221,7 +218,21 @@
       <option name="project" value="LOCAL" />
       <updated>1605608378075</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="commit">
+      <created>1605719909305</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1605719909305</updated>
+    </task>
+    <task id="LOCAL-00015" summary="commit">
+      <created>1605719961416</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1605719961416</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
