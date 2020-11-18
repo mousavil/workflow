@@ -130,6 +130,7 @@ namespace Workflow.Controller
             step.Name         = input.Name;
             step.AcceptStepId = input.AcceptStepId;
             step.RejectStepId = input.RejectStepId;
+            step.Locations = input.Locations;
 
              await _stepRepo.UpdateAsync(step);
             return Ok();

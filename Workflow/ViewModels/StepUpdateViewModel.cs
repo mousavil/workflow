@@ -9,6 +9,7 @@ namespace Workflow.ViewModels
         public int RejectStepId { get; set; }
         
         public string Name { get; set; }
+        public string Locations { get; set; }
         
     }
 }
