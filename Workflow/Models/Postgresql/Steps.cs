@@ -1,5 +1,7 @@
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Workflow.ViewModels;
 
 namespace Workflow.Models.Postgresql
 {
@@ -16,6 +18,8 @@ namespace Workflow.Models.Postgresql
         [Required]
         public short Status { get; set; }
         
+        public string Locations { get; set; }
+
         public int WorkflowId { get; set; }
         
         [ForeignKey("WorkflowId")]

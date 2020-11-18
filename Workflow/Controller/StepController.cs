@@ -65,6 +65,7 @@ namespace Workflow.Controller
                 Name       = x.Name,
                 Status     = 0,
                 WorkflowId = workflowId,
+                Locations = x.Locations
             });
             await _stepRepo.AddRangeAsync(steps);
             
@@ -91,7 +92,9 @@ namespace Workflow.Controller
                     Status = 0,
                     WorkflowId = workflowId,
                     AcceptStepId =accept,
-                    RejectStepId = reject
+                    RejectStepId = reject,
+                    Locations = item.Locations
+                    
                 });
             }
 
